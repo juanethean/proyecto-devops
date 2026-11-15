@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Salud Integral - Reserva de Horas Médicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Red Salud Integral</h1>
+            <p>Portal de Reserva de Horas Médicas en Línea</p>
+        </div>
+    </header>
+
+    <main class="container main-grid">
+        <section class="card form-section">
+            <h2>Agendar Consulta Médica</h2>
+            <form action="#" method="post" onsubmit="event.preventDefault(); alert('Simulación: Solicitud de reserva validada en entorno local.');">
+                <div class="form-group">
+                    <label for="rut">RUT / Identificación (Simulado)</label>
+                    <input type="text" id="rut" name="rut" placeholder="Ej: 12.345.678-9" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo del Paciente</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese nombre y apellido" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="especialidad">Especialidad Médica</label>
+                    <select id="especialidad" name="especialidad" required>
+                        <option value="">Seleccione una especialidad...</option>
+                        <option value="medicina-general">Medicina General</option>
+                        <option value="cardiologia">Cardiología</option>
+                        <option value="pediatria">Pediatría</option>
+                        <option value="traumatologia">Traumatología</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="fecha">Fecha Preferente</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                </div>
+
+                <button type="submit" class="btn-primary">Confirmar Reserva</button>
+            </form>
+        </section>
+
+        <aside class="sidebar">
+            <div class="card status-card">
+                <h3>Estado del Servicio</h3>
+                <p><span class="badge-online">● Operativo</span> Contenedor Nginx Alpine</p>
+                <ul class="info-list">
+                    <li><strong>Entorno:</strong> Local / Simulado (Docker)</li>
+                    <li><strong>Versión App:</strong> v1.0.0</li>
+                    <li><strong>Puerto Expuesto:</strong> 8080</li>
+                </ul>
+            </div>
+
+            <div class="card info-card">
+                <h3>Datos Generales de Atención</h3>
+                <p><strong>Horario de Atención:</strong><br>Lunes a Viernes: 08:00 a 20:00 hrs.<br>Sábados: 09:00 a 14:00 hrs.</p>
+                <p><strong>Mesa de Ayuda Salud:</strong><br>600 000 1234 (Línea referencial)</p>
+                <p class="security-note"><em>Nota de privacidad: Este entorno de demostración no almacena ni transmite datos personales reales.</em></p>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Red Salud Integral - Proyecto Integrador DevOps</p>
+        </div>
+    </footer>
+</body>
+</html>
