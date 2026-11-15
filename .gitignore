@@ -1,0 +1,13 @@
+# Archivos de entorno con posibles valores reales
+.env
+.env.local
+.env.*.local
+
+# Archivos del sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs temporales y evidencias locales
+*.log
