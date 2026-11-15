@@ -1,0 +1,35 @@
+name: Validacion CI Portal Salud
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validar-y-construir:
+    name: Validar Estructura, Seguridad y Build Docker
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener codigo del repositorio
+        uses: actions/checkout@v4
+
+      - name: Verificar archivos obligatorios y seguridad
+        run: |
+          test -f README.md
+          test -f Dockerfile
+          test -f docker-compose.yml
+          test -f .env.example
+          test -f .gitignore
+          test -f src/index.html
+          test -f src/styles.css
+          if [ -f .env ]; then echo "ERROR: Archivo .env sensible detectado"; exit 1; fi
+
+      - name: Validar configuracion Docker Compose
+        run: docker compose config
+
+      - name: Construir imagen Docker del portal
+        run: docker build -t portal-reserva-salud:ci .
